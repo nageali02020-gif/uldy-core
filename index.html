@@ -3,61 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kramesk Domains | نطاقات كراميسك</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <title>DOMINZ Market | سوق النطاقات المميزة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --gold: #D4AF37; --bg: #080808; --card: #121212; --white: #ffffff; }
+        :root { --accent: #00d4ff; --bg: #050505; --card: #111; --white: #ffffff; --price-gold: #FFD700; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
-        body { background-color: var(--bg); color: var(--white); text-align: center; display: flex; flex-direction: column; min-height: 100vh; }
+        body { background-color: var(--bg); color: var(--white); text-align: center; }
         
-        nav { padding: 20px; border-bottom: 1px solid rgba(212,175,55,0.2); }
-        .logo { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--gold); font-weight: 900; }
+        nav { padding: 25px 8%; background: rgba(0,0,0,0.9); border-bottom: 1px solid #222; display: flex; justify-content: center; position: sticky; top: 0; z-index: 100; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; color: var(--accent); letter-spacing: 3px; }
 
-        .container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px; color: var(--white); }
-        
-        .domain-list { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
-        .domain-item { 
+        .hero { padding: 60px 20px; background: radial-gradient(circle at center, #001a33 0%, #050505 100%); }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { color: #888; font-size: 1rem; }
+
+        .market-container { padding: 40px 8%; max-width: 900px; margin: 0 auto; }
+        .domain-card { 
             background: var(--card); 
-            padding: 20px; 
-            border-radius: 10px; 
             border: 1px solid #222; 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin-bottom: 15px; 
             display: flex; 
             justify-content: space-between; 
-            align-items: center;
-            transition: 0.3s;
+            align-items: center; 
+            transition: 0.3s ease;
         }
-        .domain-item:hover { border-color: var(--gold); transform: scale(1.02); }
-        .domain-name { font-size: 1.2rem; font-weight: bold; color: var(--gold); letter-spacing: 1px; }
-        .status { font-size: 0.8rem; background: rgba(212,175,55,0.1); padding: 5px 10px; border-radius: 20px; color: #aaa; }
+        .domain-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 212, 255, 0.1); }
+        
+        .domain-info { text-align: right; }
+        .domain-name { font-size: 1.4rem; font-weight: bold; color: var(--white); text-transform: lowercase; }
+        .badge { background: #1a1a1a; color: var(--accent); padding: 3px 10px; border-radius: 4px; font-size: 0.75rem; margin-top: 5px; display: inline-block; border: 1px solid #333; }
 
-        footer { padding: 20px; color: #444; font-size: 0.9rem; }
+        .price-section { display: flex; align-items: center; gap: 20px; }
+        .price-tag { font-size: 1.3rem; font-weight: bold; color: var(--price-gold); font-family: 'Orbitron', sans-serif; }
+        
+        .buy-btn { 
+            background: var(--accent); 
+            color: #000; 
+            padding: 8px 20px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .buy-btn:hover { background: var(--white); }
+
+        footer { padding: 30px; border-top: 1px solid #111; color: #444; font-size: 0.8rem; }
+
+        @media (max-width: 650px) {
+            .domain-card { flex-direction: column; gap: 15px; text-align: center; }
+            .domain-info { text-align: center; }
+            .price-section { flex-direction: column; gap: 10px; }
+        }
     </style>
 </head>
 <body>
 
-    <nav><div class="logo">KRAMESK</div></nav>
+    <nav><div class="logo">DOMINZ MARKET</div></nav>
 
-    <div class="container">
-        <h1>النطاقات المسجلة</h1>
+    <section class="hero">
+        <h1>مجموعة النطاقات الحصرية</h1>
+        <p>استثمر في هويتك الرقمية مع DOMINZ</p>
+    </section>
+
+    <div class="market-container">
         
-        <div class="domain-list">
-            <div class="domain-item">
+        <div class="domain-card">
+            <div class="domain-info">
+                <span class="domain-name">usdbot.ai</span>
+                <br><span class="badge">ذكاء اصطناعي / بوتات</span>
+            </div>
+            <div class="price-section">
+                <div class="price-tag">$9,800</div>
+                <a href="https://wa.me/218917021437?text=أريد الاستفسار عن شراء دومين usdbot.ai" class="buy-btn">شراء الآن</a>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="domain-info">
+                <span class="domain-name">vlsfo.com</span>
+                <br><span class="badge">طاقة / شحن بحري</span>
+            </div>
+            <div class="price-section">
+                <div class="price-tag">$78,900</div>
+                <a href="https://wa.me/218917021437?text=أريد الاستفسار عن شراء دومين vlsfo.com" class="buy-btn">شراء الآن</a>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="domain-info">
+                <span class="domain-name">vlsfo.xyz</span>
+                <br><span class="badge">نطاق ويب 3</span>
+            </div>
+            <div class="price-section">
+                <div class="price-tag">$45,000</div>
+                <a href="https://wa.me/218917021437?text=أريد الاستفسار عن شراء دومين vlsfo.xyz" class="buy-btn">شراء الآن</a>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="domain-info">
                 <span class="domain-name">techllms.xyz</span>
-                <span class="status">نشط</span>
+                <br><span class="badge">تقنية LLM / برمجيات</span>
             </div>
+            <div class="price-section">
+                <div class="price-tag">$1,400</div>
+                <a href="https://wa.me/218917021437?text=أريد الاستفسار عن شراء دومين techllms.xyz" class="buy-btn">شراء الآن</a>
+            </div>
+        </div>
 
-            <div class="domain-item">
-                <span class="domain-name">kramesk.shop</span>
-                <span class="status">قيد الإعداد</span>
-            </div>
-
-            </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Kramesk Domain Management</p>
+        <p>&copy; 2026 DOMINZ Market. All Rights Reserved.</p>
     </footer>
 
 </body>
