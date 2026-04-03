@@ -3,122 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kramesk Elite Accessories | كراميسك ستور</title>
+    <title>Kramesk Domains | نطاقات كراميسك</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --gold: #D4AF37; --bg: #080808; --card: #121212; --white: #ffffff; --green: #25D366; }
+        :root { --gold: #D4AF37; --bg: #080808; --card: #121212; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
-        body { background-color: var(--bg); color: var(--white); text-align: right; line-height: 1.6; }
+        body { background-color: var(--bg); color: var(--white); text-align: center; display: flex; flex-direction: column; min-height: 100vh; }
         
-        /* Nav */
-        nav { padding: 15px 8%; background: rgba(8,8,8,0.95); border-bottom: 1px solid rgba(212,175,55,0.2); position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: center; backdrop-filter: blur(10px); }
-        .logo { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--gold); font-weight: 900; letter-spacing: 1px; }
+        nav { padding: 20px; border-bottom: 1px solid rgba(212,175,55,0.2); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--gold); font-weight: 900; }
 
-        /* Hero */
-        .hero { height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 60px; background: radial-gradient(circle, #1a1a1a 0%, #080808 100%); text-align: center; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 5px; }
-        .hero p { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; font-weight: bold; }
-
-        /* Products Grid */
-        .container { padding: 40px 8%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px; color: var(--white); }
         
-        .card { background: var(--card); border-radius: 12px; overflow: hidden; border: 1px solid #222; transition: 0.3s; position: relative; }
-        .card:hover { transform: translateY(-8px); border-color: var(--gold); }
-        .card img { width: 100%; height: 300px; object-fit: cover; }
-        
-        .card-info { padding: 20px; text-align: center; }
-        .card-info h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--white); }
-        .price { color: var(--gold); font-size: 1.5rem; font-weight: 900; margin-bottom: 15px; }
-        
-        .btn-wa { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--green); color: white; padding: 10px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.95rem; }
-        .btn-wa:hover { background: #1ebe5d; }
+        .domain-list { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+        .domain-item { 
+            background: var(--card); 
+            padding: 20px; 
+            border-radius: 10px; 
+            border: 1px solid #222; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            transition: 0.3s;
+        }
+        .domain-item:hover { border-color: var(--gold); transform: scale(1.02); }
+        .domain-name { font-size: 1.2rem; font-weight: bold; color: var(--gold); letter-spacing: 1px; }
+        .status { font-size: 0.8rem; background: rgba(212,175,55,0.1); padding: 5px 10px; border-radius: 20px; color: #aaa; }
 
-        footer { padding: 30px; text-align: center; border-top: 1px solid #222; margin-top: 40px; color: #555; font-size: 0.8rem; }
-
-        /* Floating Button */
-        .wa-float { position: fixed; bottom: 25px; right: 25px; background: var(--green); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 8px 20px rgba(0,0,0,0.5); text-decoration: none; }
+        footer { padding: 20px; color: #444; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <nav><div class="logo">KRAMESK STORE</div></nav>
-
-    <section class="hero">
-        <h1>KRAMESK</h1>
-        <p>فخامة الإكسسوارات العصرية</p>
-    </section>
+    <nav><div class="logo">KRAMESK</div></nav>
 
     <div class="container">
-        <div class="grid">
-            
-            <div class="card">
-                <img src="https://raw.githubusercontent.com/Uldy-USDBOT/uldy-core/main/10920.jpg" alt="طقم زمرد">
-                <div class="card-info"><h3>طقم الزمرد الملكي</h3><div class="price">580 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
+        <h1>النطاقات المسجلة</h1>
+        
+        <div class="domain-list">
+            <div class="domain-item">
+                <span class="domain-name">techllms.xyz</span>
+                <span class="status">نشط</span>
             </div>
 
-            <div class="card">
-                <img src="https://raw.githubusercontent.com/Uldy-USDBOT/uldy-core/main/10919.jpg" alt="طقم ياقوت">
-                <div class="card-info"><h3>طقم الياقوت الأزرق</h3><div class="price">620 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
+            <div class="domain-item">
+                <span class="domain-name">kramesk.shop</span>
+                <span class="status">قيد الإعداد</span>
             </div>
 
-            <div class="card">
-                <img src="https://raw.githubusercontent.com/Uldy-USDBOT/uldy-core/main/10922.jpg" alt="طقم أحمر">
-                <div class="card-info"><h3>طقم الفخامة المخملي</h3><div class="price">550 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
             </div>
-
-            <div class="card">
-                <img src="https://raw.githubusercontent.com/Uldy-USDBOT/uldy-core/main/10917.jpg" alt="ساعة ذهبية">
-                <div class="card-info"><h3>ساعة "صن لايف" الذهبية</h3><div class="price">340 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1524805444758-09911d436a99?w=500" alt="ساعة">
-                <div class="card-info"><h3>ساعة كلاسيك جلد</h3><div class="price">290 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=500" alt="ساعة">
-                <div class="card-info"><h3>ساعة بريميوم سوداء</h3><div class="price">380 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500" alt="خاتم">
-                <div class="card-info"><h3>خاتم الألماس النقي</h3><div class="price">210 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1611085583191-a3b13bc24db2?w=500" alt="سوار">
-                <div class="card-info"><h3>سوار التنس المرصع</h3><div class="price">180 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500" alt="قلادة">
-                <div class="card-info"><h3>عقد اللؤلؤ العصري</h3><div class="price">420 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500" alt="مجوهرات">
-                <div class="card-info"><h3>أقراط الذهب الوردي</h3><div class="price">150 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1520e?w=500" alt="مجوهرات">
-                <div class="card-info"><h3>خاتم توباز أزرق</h3><div class="price">310 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1573408302185-9146fe634ad0?w=500" alt="مجوهرات">
-                <div class="card-info"><h3>سوار الفضة الإيطالي</h3><div class="price">240 د.ل</div><a href="https://wa.me/218917021437" class="btn-wa"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
-            </div>
-
-        </div>
     </div>
 
-    <footer><p>&copy; 2026 Kramesk Store | جميع الحقوق محفوظة</p></footer>
-
-    <a href="https://wa.me/218917021437" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <footer>
+        <p>&copy; 2026 Kramesk Domain Management</p>
+    </footer>
 
 </body>
 </html>
