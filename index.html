@@ -3,83 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kramesk Store - Trial</title>
+    <title>Kramesk Elite Accessories | كراميسك ستور</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --gold: #D4AF37; --bg-black: #080808; --card-bg: #121212; --white: #ffffff; --whatsapp-green: #25D366; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--bg-black); color: var(--white); text-align: right; overflow-x: hidden; }
-        nav { padding: 20px 8%; background: rgba(8,8,8,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(212,175,55,0.1); display: flex; justify-content: center; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--gold); }
-        .hero { height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle, #1a1a1a 0%, #080808 100%); margin-top: 60px; }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-        .products-section { padding: 50px 8%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-        .card { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid #222; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); border-color: var(--gold); }
-        .card img { width: 100%; height: 250px; object-fit: cover; }
-        .card-body { padding: 20px; text-align: center; }
-        .card-price { color: var(--gold); font-size: 1.4rem; font-weight: bold; margin: 10px 0; }
-        .btn-buy { display: block; background: var(--whatsapp-green); color: white; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        /* Chat UI */
-        .chat-toggle { position: fixed; bottom: 20px; left: 20px; background: var(--gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; font-size: 24px; color: black; }
-        .chat-window { position: fixed; bottom: 90px; left: 20px; width: 320px; height: 450px; background: #121212; border: 1px solid var(--gold); border-radius: 15px; display: none; flex-direction: column; z-index: 1000; overflow: hidden; }
-        .chat-header { background: var(--gold); color: black; padding: 15px; font-weight: bold; }
-        .chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
-        .msg { padding: 8px 12px; border-radius: 10px; max-width: 80%; font-size: 0.9rem; }
-        .msg.bot { background: #222; align-self: flex-start; }
-        .msg.user { background: var(--gold); color: black; align-self: flex-end; }
-        .chat-input { padding: 10px; display: flex; gap: 5px; background: #1a1a1a; }
-        .chat-input input { flex: 1; padding: 8px; border-radius: 5px; border: 1px solid #333; background: #000; color: white; }
-        .chat-input button { background: var(--gold); border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer; }
+        :root { --gold: #D4AF37; --bg: #080808; --card: #121212; --white: #ffffff; --green: #25D366; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+        body { background-color: var(--bg); color: var(--white); text-align: right; overflow-x: hidden; }
+        
+        /* Header */
+        nav { padding: 20px 8%; background: rgba(8,8,8,0.95); border-bottom: 1px solid rgba(212,175,55,0.2); position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: center; backdrop-filter: blur(10px); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold); font-weight: 900; letter-spacing: 2px; }
+
+        /* Hero Section */
+        .hero { height: 45vh; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 80px; background: radial-gradient(circle, #1a1a1a 0%, #080808 100%); border-bottom: 1px solid #222; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--white); margin-bottom: 10px; }
+        .hero p { color: var(--gold); font-size: 1.2rem; letter-spacing: 3px; font-weight: bold; }
+
+        /* Products Grid */
+        .container { padding: 60px 8%; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; color: var(--gold); font-family: 'Playfair Display', serif; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; }
+        
+        .card { background: var(--card); border-radius: 15px; overflow: hidden; border: 1px solid #222; transition: 0.4s; position: relative; }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); }
+        .card img { width: 100%; height: 320px; object-fit: cover; border-bottom: 1px solid #222; }
+        
+        .card-info { padding: 25px; text-align: center; }
+        .card-info h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--white); }
+        .price { color: var(--gold); font-size: 1.6rem; font-weight: 900; margin-bottom: 20px; }
+        
+        .btn-whatsapp { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--green); color: white; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+        .btn-whatsapp:hover { background: #1ebe5d; transform: scale(1.05); }
+
+        /* Footer */
+        footer { padding: 40px; text-align: center; border-top: 1px solid #222; margin-top: 50px; color: #666; }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: var(--green); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); text-decoration: none; }
     </style>
 </head>
 <body>
+
     <nav><div class="logo">KRAMESK STORE</div></nav>
-    <section class="hero"><h1>KRAMESK</h1><p>إكسسوارات النخبة</p></section>
-    <section class="products-section">
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500" alt="ساعة">
-                <div class="card-body"><h3>ساعة كلاسيك</h3><div class="card-price">350 د.ل</div><a href="https://wa.me/218917021437" class="btn-buy">طلب عبر واتساب</a></div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500" alt="عقد">
-                <div class="card-body"><h3>طقم ملكي</h3><div class="card-price">580 د.ل</div><a href="https://wa.me/218917021437" class="btn-buy">طلب عبر واتساب</a></div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=500" alt="خاتم">
-                <div class="card-body"><h3>خاتم ألماس</h3><div class="card-price">290 د.ل</div><a href="https://wa.me/218917021437" class="btn-buy">طلب عبر واتساب</a></div>
-            </div>
-        </div>
+
+    <section class="hero">
+        <h1>KRAMESK</h1>
+        <p>عالم الإكسسوارات النادرة</p>
     </section>
-    <div class="chat-toggle" onclick="toggleChat()"><i class="fas fa-robot"></i></div>
-    <div class="chat-window" id="chatWin">
-        <div class="chat-header">مساعد كراميسك</div>
-        <div class="chat-messages" id="msgs"><div class="msg bot">مرحباً بك! كيف أساعدك؟</div></div>
-        <div class="chat-input"><input type="text" id="userInput" placeholder="اكتب سؤالك..."><button onclick="send()">إرسال</button></div>
+
+    <div class="container">
+        <h2 class="section-title">التشكيلة الحالية</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600" alt="ساعة">
+                <div class="card-info">
+                    <h3>ساعة "رويال" ذهبية</h3>
+                    <div class="price">480 د.ل</div>
+                    <a href="https://wa.me/218917021437" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600" alt="طقم">
+                <div class="card-info">
+                    <h3>طقم "الياقوت" الملكي</h3>
+                    <div class="price">650 د.ل</div>
+                    <a href="https://wa.me/218917021437" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600" alt="خاتم">
+                <div class="card-info">
+                    <h3>خاتم الماس "سوليتير"</h3>
+                    <div class="price">320 د.ل</div>
+                    <a href="https://wa.me/218917021437" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1611085583191-a3b13bc24db2?w=600" alt="سوار">
+                <div class="card-info">
+                    <h3>سوار "تنس" فاخر</h3>
+                    <div class="price">270 د.ل</div>
+                    <a href="https://wa.me/218917021437" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600" alt="ساعة">
+                <div class="card-info">
+                    <h3>ساعة "أوشن" فضية</h3>
+                    <div class="price">410 د.ل</div>
+                    <a href="https://wa.me/218917021437" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600" alt="أقراط">
+                <div class="card-info">
+                    <h3>أقراط "اللؤلؤ" النقية</h3>
+                    <div class="price">190 د.ل</div>
+                    <a href="https://wa.me/218917021437" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600" alt="مجوهرات">
+                <div class="card-info">
+                    <h3>عقد "القلب" المرصع</h3>
+                    <div class="price">380 د.ل</div>
+                    <a href="https://wa.me/218917021437" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=600" alt="ساعة">
+                <div class="card-info">
+                    <h3>ساعة "كلاسيك" جلد</h3>
+                    <div class="price">250 د.ل</div>
+                    <a href="https://wa.me/218917021437" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <script>
-        const API_KEY = "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";
-        function toggleChat() { const w = document.getElementById('chatWin'); w.style.display = w.style.display === 'flex' ? 'none' : 'flex'; }
-        async function send() {
-            const inp = document.getElementById('userInput');
-            const m = document.getElementById('msgs');
-            if(!inp.value) return;
-            const uText = inp.value;
-            m.innerHTML += `<div class="msg user">${uText}</div>`;
-            inp.value = '';
-            try {
-                const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-                    method: 'POST', headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ model: "llama-3.1-8b-instant", messages: [{role:"system", content:"أنت مساعد متجر كراميسك (Kramesk). المتجر يبيع ساعات بـ 350، أطقم بـ 580، وخواتم بـ 290 د.ل. واتساب: 0917021437. رد بلهجة ليبية."}, {role:"user", content:uText}] })
-                });
-                const d = await res.json();
-                m.innerHTML += `<div class="msg bot">${d.choices[0].message.content}</div>`;
-            } catch { m.innerHTML += `<div class="msg bot">تواصل معنا واتساب: 0917021437</div>`; }
-            m.scrollTop = m.scrollHeight;
-        }
-    </script>
+
+    <footer>
+        <p>&copy; 2026 Kramesk Store. جميع الحقوق محفوظة لمتجر كراميسك.</p>
+    </footer>
+
+    <a href="https://wa.me/218917021437" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 </body>
 </html>
