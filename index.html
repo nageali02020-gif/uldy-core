@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOMINZ MARKT | Elite Digital Real Estate</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --gold: #D4AF37;
-            --gold-glow: rgba(212, 175, 55, 0.3);
+            --gold-hover: #f1c40f;
             --bg-black: #080808;
             --card-bg: #121212;
             --text-gray: #a0a0a0;
             --white: #ffffff;
+            --whatsapp-green: #25D366;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
@@ -27,19 +29,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(8, 8, 8, 0.9);
+            background: rgba(8, 8, 8, 0.95);
             backdrop-filter: blur(15px);
             position: fixed; width: 100%; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
-        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--white); letter-spacing: 2px; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--white); letter-spacing: 2px; text-transform: uppercase; }
         .logo span { color: var(--gold); }
-        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
 
         /* Hero Section */
         .hero {
-            height: 85vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -47,82 +49,99 @@
             text-align: center;
             background: radial-gradient(circle at center, #1a1a1a 0%, #080808 100%);
             padding: 0 20px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 20px; line-height: 1.1; }
-        .hero p { color: var(--gold); font-weight: 500; letter-spacing: 4px; text-transform: uppercase; font-size: 1rem; margin-bottom: 40px; }
-        .hero-btns { display: flex; gap: 20px; }
+        .hero p { color: var(--gold); font-weight: 600; letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5.5rem); margin-bottom: 30px; line-height: 1.1; font-weight: 900; }
         
+        .btn-view {
+            padding: 18px 45px;
+            background: var(--gold);
+            color: black;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: 0.4s;
+        }
+        .btn-view:hover { background: var(--white); transform: translateY(-3px); }
+
         /* Stats Bar */
-        .stats { display: flex; justify-content: space-around; padding: 60px 8%; background: #0c0c0c; border-bottom: 1px solid #1a1a1a; }
-        .stat-box h3 { font-size: 2rem; color: var(--gold); margin-bottom: 5px; }
+        .stats { display: flex; justify-content: space-around; padding: 50px 8%; background: #0c0c0c; border-bottom: 1px solid #1a1a1a; flex-wrap: wrap; gap: 30px; }
+        .stat-box { text-align: center; }
+        .stat-box h3 { font-size: 2.2rem; color: var(--gold); margin-bottom: 5px; font-weight: 800; }
         .stat-box p { font-size: 0.7rem; text-transform: uppercase; color: var(--text-gray); letter-spacing: 2px; }
 
-        /* Domain Marketplace Grid */
+        /* Marketplace Grid */
         .marketplace { padding: 100px 8%; }
         .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-size: 2.5rem; font-family: 'Playfair Display', serif; margin-bottom: 15px; }
-        .section-header .line { width: 60px; height: 3px; background: var(--gold); margin: 0 auto; }
+        .section-header h2 { font-size: 2.8rem; font-family: 'Playfair Display', serif; margin-bottom: 15px; }
+        .section-header .line { width: 80px; height: 3px; background: var(--gold); margin: 0 auto; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         
         .card {
             background: var(--card-bg);
-            padding: 50px 40px;
+            padding: 50px 35px;
             border: 1px solid #1f1f1f;
             transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .card:hover { border-color: var(--gold); transform: translateY(-15px); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
-        .card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, transparent, rgba(212,175,55,0.03)); opacity: 0; transition: 0.5s; }
-        .card:hover::before { opacity: 1; }
+        .card:hover { border-color: var(--gold); transform: translateY(-15px); box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
 
-        .card-tag { font-size: 0.6rem; font-weight: 800; background: rgba(212,175,55,0.1); color: var(--gold); padding: 5px 15px; border-radius: 50px; text-transform: uppercase; margin-bottom: 25px; display: inline-block; }
-        .domain-name { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; display: block; color: var(--white); }
-        .domain-info { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 30px; min-height: 80px; line-height: 1.7; }
-        .price { font-size: 2.5rem; font-weight: 800; margin-bottom: 35px; color: var(--white); display: flex; align-items: flex-start; }
-        .price span { font-size: 1.2rem; color: var(--gold); margin-top: 8px; margin-right: 5px; }
+        .card-tag { font-size: 0.65rem; font-weight: 800; background: rgba(212,175,55,0.1); color: var(--gold); padding: 6px 15px; border-radius: 2px; text-transform: uppercase; margin-bottom: 25px; display: inline-block; width: fit-content; }
+        .domain-name { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; display: block; color: var(--white); letter-spacing: -1px; }
+        .domain-info { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 30px; min-height: 90px; line-height: 1.8; }
+        
+        .price { font-size: 2.6rem; font-weight: 800; margin-bottom: 35px; color: var(--white); border-top: 1px solid #222; padding-top: 25px; }
+        .price span { font-size: 1.1rem; color: var(--gold); vertical-align: top; margin-right: 4px; }
 
-        .btn-main {
-            display: block; width: 100%; padding: 18px; text-align: center; text-decoration: none; font-weight: 800; font-size: 0.9rem;
+        .btn-action {
+            display: block; width: 100%; padding: 18px; text-align: center; text-decoration: none; font-weight: 800; font-size: 0.85rem;
             text-transform: uppercase; letter-spacing: 2px; transition: 0.4s;
         }
         .btn-gold { background: var(--gold); color: #000; }
         .btn-gold:hover { background: var(--white); }
-        .btn-outline { border: 1px solid var(--gold); color: var(--gold); margin-top: 15px; }
+        .btn-outline { border: 1px solid var(--gold); color: var(--gold); }
         .btn-outline:hover { background: var(--gold); color: #000; }
 
-        /* Side Sections - Why Invest */
-        .why-invest { padding: 100px 8%; background: #0a0a0a; display: flex; align-items: center; gap: 80px; flex-wrap: wrap; }
+        /* Why Invest Section */
+        .why-invest { padding: 100px 8%; background: #0a0a0a; border-top: 1px solid #111; }
+        .why-container { display: flex; align-items: center; gap: 80px; flex-wrap: wrap; }
         .why-text { flex: 1; min-width: 300px; }
-        .why-text h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 30px; }
-        .feature-item { margin-bottom: 30px; display: flex; gap: 20px; }
-        .feature-icon { font-size: 1.5rem; color: var(--gold); }
-        .feature-item h4 { margin-bottom: 5px; font-size: 1.1rem; }
-        .feature-item p { color: var(--text-gray); font-size: 0.9rem; }
+        .why-text h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 40px; }
+        .feature { margin-bottom: 35px; display: flex; gap: 25px; }
+        .feature i { font-size: 1.8rem; color: var(--gold); margin-top: 5px; }
+        .feature h4 { font-size: 1.2rem; margin-bottom: 8px; color: var(--white); }
+        .feature p { color: var(--text-gray); font-size: 0.95rem; }
 
         /* Trust & Security */
-        .security { padding: 80px 8%; text-align: center; border-top: 1px solid #1a1a1a; }
-        .trust-icons { display: flex; justify-content: center; gap: 50px; opacity: 0.5; margin-top: 40px; flex-wrap: wrap; }
-        .trust-icons i { font-size: 2.5rem; }
+        .security { padding: 80px 8%; text-align: center; background: var(--bg-black); }
+        .security h3 { font-size: 1.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; }
+        .trust-icons { display: flex; justify-content: center; gap: 60px; opacity: 0.4; flex-wrap: wrap; }
+        .trust-icons i { font-size: 3rem; }
 
-        /* Floating WhatsApp */
-        .wa-float {
-            position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1001;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); text-decoration: none; transition: 0.3s;
+        /* WhatsApp Floating */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp-green); color: white; width: 65px; height: 65px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 1001;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); text-decoration: none; transition: 0.4s;
         }
-        .wa-float:hover { transform: scale(1.1) rotate(10deg); }
+        .whatsapp-float:hover { transform: scale(1.15) rotate(15deg); }
 
-        footer { padding: 80px 8%; background: #050505; text-align: center; }
-        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); margin-bottom: 20px; }
-        .footer-info { color: var(--text-gray); font-size: 0.8rem; letter-spacing: 1px; }
+        /* Footer */
+        footer { padding: 80px 8%; background: #050505; text-align: center; border-top: 1px solid #111; }
+        .f-logo { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--gold); margin-bottom: 25px; font-weight: 900; }
+        .f-copy { color: #555; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
+            .hero h1 { font-size: 3.2rem; }
             .grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
+            .why-container { text-align: center; }
+            .feature { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -131,8 +150,8 @@
     <nav>
         <div class="logo">DOMINZ<span> MARKT</span></div>
         <div class="nav-links">
-            <a href="#marketplace">Marketplace</a>
-            <a href="#invest">Why Invest</a>
+            <a href="#marketplace">Portfolio</a>
+            <a href="#why">Investment</a>
             <a href="https://wa.me/218917021437">Contact Broker</a>
         </div>
     </nav>
@@ -140,102 +159,117 @@
     <section class="hero">
         <p>Premium Digital Assets</p>
         <h1>Own The Online<br>Empire</h1>
-        <div class="hero-btns">
-            <a href="#marketplace" class="btn-main btn-gold" style="width: auto; padding-left: 50px; padding-right: 50px;">View Portfolio</a>
-        </div>
+        <a href="#marketplace" class="btn-view">Explore Collection</a>
     </section>
 
     <div class="stats">
-        <div class="stat-box"><h3>$135k+</h3><p>Total Value</p></div>
-        <div class="stat-box"><h3>2026</h3><p>Current Drops</p></div>
-        <div class="stat-box"><h3>100%</h3><p>Secure Escrow</p></div>
+        <div class="stat-box"><h3>$135k+</h3><p>Market Value</p></div>
+        <div class="stat-box"><h3>2026</h3><p>Portfolio Release</p></div>
+        <div class="stat-box"><h3>Secure</h3><p>Escrow Verified</p></div>
     </div>
 
     <section class="marketplace" id="marketplace">
         <div class="section-header">
-            <h2>The Premium Collection</h2>
+            <h2>The Elite Collection</h2>
             <div class="line"></div>
         </div>
 
         <div class="grid">
             
             <div class="card">
-                <div class="card-tag">GLOBAL ENERGY STANDARD</div>
-                <span class="domain-name">VLSFO.COM</span>
-                <p class="domain-info">The definitive digital address for "Very Low Sulphur Fuel Oil". A category-defining asset for the multibillion-dollar marine bunkering & energy sector. <strong>IMO 2020 Compliant Domain.</strong></p>
-                <div class="price"><span>$</span>78,900</div>
-                <a href="https://wa.me/218917021437?text=Inquiry:%20VLSFO.COM" class="btn-main btn-gold">Acquire Asset</a>
+                <div>
+                    <div class="card-tag">Global Energy Standard</div>
+                    <span class="domain-name">VLSFO.COM</span>
+                    <p class="domain-info">The definitive digital address for "Very Low Sulphur Fuel Oil". A category-defining asset for the multibillion-dollar marine energy sector. <strong>IMO 2020 Compliant Keyword.</strong></p>
+                </div>
+                <div>
+                    <div class="price"><span>$</span>78,900</div>
+                    <a href="https://wa.me/218917021437?text=Hello,%20I%20am%20interested%20in%20acquiring%20the%20premium%20domain:%20VLSFO.COM" class="btn-action btn-gold">Acquire Asset</a>
+                </div>
             </div>
 
             <div class="card">
-                <div class="card-tag">WEB3 LOGISTICS</div>
-                <span class="domain-name">VLSFO.XYZ</span>
-                <p class="domain-info">Engineered for decentralized maritime settlement protocols. Perfect for blockchain-based fuel tracking, carbon credit monitoring, and smart-contract supply chain management.</p>
-                <div class="price"><span>$</span>45,000</div>
-                <a href="https://wa.me/218917021437?text=Inquiry:%20VLSFO.XYZ" class="btn-main btn-outline">Make Offer</a>
+                <div>
+                    <div class="card-tag">Web3 Logistics</div>
+                    <span class="domain-name">VLSFO.XYZ</span>
+                    <p class="domain-info">Engineered for decentralized maritime protocols. Ideal for blockchain-based fuel tracking, carbon monitoring, and smart-contract supply chain management.</p>
+                </div>
+                <div>
+                    <div class="price"><span>$</span>45,000</div>
+                    <a href="https://wa.me/218917021437?text=Hello,%20I%20would%20like%20to%20make%20an%20offer%20for:%20VLSFO.XYZ" class="btn-action btn-outline">Make Offer</a>
+                </div>
             </div>
 
             <div class="card">
-                <div class="card-tag">FINTECH AI</div>
-                <span class="domain-name">USDBOT.AI</span>
-                <p class="domain-info">High-authority AI domain for automated finance and neural trading. The premier address for USD-pegged algorithmic liquidity engines and neural network fintech bots.</p>
-                <div class="price"><span>$</span>9,800</div>
-                <a href="https://wa.me/218917021437?text=Inquiry:%20USDBOT.AI" class="btn-main btn-outline">Make Offer</a>
+                <div>
+                    <div class="card-tag">Fintech AI</div>
+                    <span class="domain-name">USDBOT.AI</span>
+                    <p class="domain-info">High-authority AI domain for automated finance. The premier address for USD-pegged liquidity engines and neural network fintech trading bots.</p>
+                </div>
+                <div>
+                    <div class="price"><span>$</span>9,800</div>
+                    <a href="https://wa.me/218917021437?text=Hello,%20I%20am%20interested%20in%20buying:%20USDBOT.AI" class="btn-action btn-outline">Make Offer</a>
+                </div>
             </div>
 
             <div class="card">
-                <div class="card-tag">EDUCATION TECH</div>
-                <span class="domain-name">TECHLLMS.XYZ</span>
-                <p class="domain-info">Strategically designed for technical Large Language Models (LLMs) and automated training systems. The perfect infrastructure for the AI-assisted technical education era.</p>
-                <div class="price"><span>$</span>1,400</div>
-                <a href="https://wa.me/218917021437?text=Inquiry:%20TECHLLMS.XYZ" class="btn-main btn-outline">Make Offer</a>
+                <div>
+                    <div class="card-tag">Education Tech</div>
+                    <span class="domain-name">TECHLLMS.XYZ</span>
+                    <p class="domain-info">Strategically designed for technical Large Language Models (LLMs). The perfect infrastructure for the AI-assisted technical education era.</p>
+                </div>
+                <div>
+                    <div class="price"><span>$</span>1,400</div>
+                    <a href="https://wa.me/218917021437?text=Hello,%20I%20want%20to%20discuss%20the%20price%20of:%20TECHLLMS.XYZ" class="btn-action btn-outline">Make Offer</a>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <section class="why-invest" id="invest">
-        <div class="why-text">
-            <h2>Why Invest in <span style="color: var(--gold);">Premium Domains?</span></h2>
-            <div class="feature-item">
-                <i class="fas fa-chart-line feature-icon"></i>
-                <div>
-                    <h4>Fixed Scarcity</h4>
-                    <p>Unlike other assets, there is only ONE of each domain. As the internet grows, premium keywords become exponentially more valuable.</p>
+    <section class="why-invest" id="why">
+        <div class="why-container">
+            <div class="why-text">
+                <h2>The Power of <span style="color: var(--gold);">Strategic Assets</span></h2>
+                <div class="feature">
+                    <i class="fas fa-gem"></i>
+                    <div>
+                        <h4>Digital Scarcity</h4>
+                        <p>A premium domain is a one-of-a-kind asset. Once acquired, you own the exclusive gateway to that specific industry keyword.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <div>
+                        <h4>Instant Authority</h4>
+                        <p>Skip years of SEO. A top-tier domain like VLSFO.COM grants immediate trust and global market leadership from day one.</p>
+                    </div>
                 </div>
             </div>
-            <div class="feature-item">
-                <i class="fas fa-shield-alt feature-icon"></i>
-                <div>
-                    <h4>Instant Authority</h4>
-                    <p>A domain like VLSFO.COM grants immediate trust and global market leadership. Your brand is your domain.</p>
-                </div>
+            <div style="flex: 1; text-align: center;">
+                <i class="fas fa-crown" style="font-size: 12rem; color: #111;"></i>
             </div>
-        </div>
-        <div style="flex: 1; text-align: center;">
-            <i class="fas fa-gem" style="font-size: 15rem; color: #151515;"></i>
         </div>
     </section>
 
     <section class="security">
-        <h3>Secure Acquisition Process</h3>
-        <p style="color: var(--text-gray); margin-top: 10px;">We accept Crypto (BTC, USDT), Bank Transfers, and Escrow Services.</p>
+        <h3>Safe & Secure Transfer</h3>
         <div class="trust-icons">
-            <i class="fab fa-bitcoin"></i>
-            <i class="fas fa-university"></i>
-            <i class="fas fa-file-contract"></i>
-            <i class="fab fa-ethereum"></i>
+            <i class="fab fa-bitcoin" title="Bitcoin Accepted"></i>
+            <i class="fas fa-shield-check" title="Escrow Protected"></i>
+            <i class="fas fa-university" title="Bank Wire"></i>
+            <i class="fab fa-ethereum" title="Ethereum Accepted"></i>
         </div>
     </section>
 
-    <a href="https://wa.me/218917021437" class="wa-float" target="_blank">
+    <a href="https://wa.me/218917021437" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <footer>
-        <div class="footer-logo">DOMINZ MARKT</div>
-        <p class="footer-info">© 2026 DOMINZ MARKT GLOBAL. ALL RIGHTS RESERVED.</p>
-        <p class="footer-info" style="margin-top: 10px; color: var(--gold);">AN AFFILIATE OF USDBOT.AI ECOSYSTEM</p>
+        <div class="f-logo">DOMINZ MARKT</div>
+        <p class="f-copy">© 2026 DOMINZ MARKT GLOBAL. ALL RIGHTS RESERVED.</p>
+        <p class="f-copy" style="margin-top: 15px; color: var(--gold); font-size: 0.7rem;">AN AFFILIATE OF USDBOT.AI ECOSYSTEM</p>
     </footer>
 
 </body>
