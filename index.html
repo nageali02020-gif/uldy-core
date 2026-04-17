@@ -3,412 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="خدمات استضافة عالمية سريعة وحجز نطاقات .com مع حماية DNSSEC. ابدأ مشروعك الرقمي الآن.">
-    <meta name="keywords" content="استضافة, دومين, حجز نطاقات, DNSSEC, تصميم مواقع, سيرفرات سريعة, استضافة ليبيا, تجارة دولية">
-    <title>خدمات الاستضافة الاحترافية | انطلق بثقة</title>
+    <meta name="description" content="مؤسسة TechLLMs للحلول المالية الذكية وتقنيات Web3. نوفر خدمات شراء USDT الآمنة وتسويات التجارة الدولية العابرة للحدود.">
+    <meta name="keywords" content="USDT, تبادل رقمي, تسويات مالية, تجارة دولية, قطاع الطاقة, الشحن البحري, Web3, ذكاء اصطناعي, ليبيا, TechLLMs">
+    <title>TechLLMs | مؤسسة الحلول الرقمية والتسويات المالية</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* المتغيرات اللونية (Theme) */
         :root {
-            --bg-color: #0B0F19; /* أزرق ليلي عميق */
-            --primary: #00E1D9; /* سيان مضيء */
-            --secondary: #4F46E5; /* نيلي */
-            --text-light: #F3F4F6;
-            --text-muted: #9CA3AF;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --border-color: rgba(255, 255, 255, 0.08);
+            --bg-dark: #020617; /* أزرق داكن جداً طابع مؤسساتي */
+            --bg-panel: #0f172a;
+            --primary: #00E1D9; /* سيان رقمي */
+            --accent: #F59E0B; /* ذهبي للثقة المؤسساتية */
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border: rgba(255, 255, 255, 0.05);
         }
 
-        /* الإعدادات الأساسية */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.15), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(0, 225, 217, 0.15), transparent 25%);
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* التنسيقات المشتركة */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* تأثير الزجاج (Glassmorphism) */
-        .glass-panel {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 40px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .glass-panel:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border-color: rgba(0, 225, 217, 0.3);
-        }
-
-        /* الهيدر (Header) */
-        header {
-            padding: 30px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            color: white;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .contact-btn {
-            background: linear-gradient(45deg, var(--secondary), var(--primary));
-            color: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: opacity 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 225, 217, 0.3);
-        }
-
-        .contact-btn:hover {
-            opacity: 0.9;
-        }
-
-        /* القسم الرئيسي (Hero Section) */
-        .hero {
-            text-align: center;
-            padding: 80px 0 60px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        /* تنسيق الصورة في الهيدر */
-        .hero-image {
-            max-width: 100%;
-            width: 800px;
-            height: auto;
-            border-radius: 24px;
-            margin: 0 auto 60px;
-            display: block;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .hero-image:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 225, 217, 0.15);
-            border-color: rgba(0, 225, 217, 0.3);
-        }
-
-        /* المميزات (Features) */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .features h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: white;
-        }
-
-        .features p {
-            color: var(--text-muted);
-        }
-
-        /* قسم أهمية التجارة الدولية */
-        .global-trade {
-            margin-bottom: 100px;
-        }
-
-        .global-trade h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            text-align: center;
-        }
+        /* شريط التنقل */
+        header { background: rgba(2, 6, 23, 0.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border); }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+        .logo { font-size: 26px; font-weight: 900; color: white; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo i { color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
         
-        .global-trade > p {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            font-size: 1.1rem;
-            color: var(--text-muted);
+        /* القسم الرئيسي (Hero) */
+        .hero { padding: 100px 0; text-align: center; background: radial-gradient(circle at 50% -20%, rgba(0, 225, 217, 0.15), transparent 60%); }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; line-height: 1.3; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+
+        /* الأقسام الزجاجية */
+        .glass-panel {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .trade-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
+        /* شبكة الخدمات المؤسساتية */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .service-card { background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid var(--border); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); border-color: rgba(0, 225, 217, 0.3); }
+        .service-card i { font-size: 40px; color: var(--accent); margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        .trade-item {
-            text-align: right;
-        }
+        /* قسم التبادل المباشر (OTC) */
+        .exchange-section { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin: 100px 0; }
+        .calculator { background: linear-gradient(145deg, #0f172a, #020617); border: 1px solid var(--primary); }
+        .input-group { margin-bottom: 20px; text-align: right; }
+        .input-group label { display: block; margin-bottom: 10px; color: var(--text-muted); }
+        .input-wrapper { display: flex; background: rgba(0,0,0,0.5); border-radius: 10px; padding: 15px; border: 1px solid var(--border); }
+        .input-wrapper input { background: transparent; border: none; color: white; font-size: 1.5rem; outline: none; width: 100%; font-weight: bold; }
+        .currency-badge { color: var(--primary); font-weight: bold; margin-right: 15px; display: flex; align-items: center; }
+        
+        /* الدفع والمحفظة الباردة */
+        .payment-info { text-align: center; }
+        .qr-code { width: 180px; border-radius: 15px; border: 2px solid var(--primary); margin: 20px 0; }
+        .wallet-address { background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; gap: 10px; word-break: break-all; font-family: monospace; color: var(--accent); }
+        .copy-btn { background: var(--primary); color: #000; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .copy-btn:hover { background: white; }
 
-        .trade-item i {
-            font-size: 28px;
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
+        /* أزرار العمل */
+        .action-btn { background: var(--primary); color: #000; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 800; display: inline-block; transition: 0.3s; width: 100%; text-align: center; border: none; cursor: pointer; font-size: 1.1rem; margin-top: 20px; }
+        .action-btn:hover { background: var(--accent); color: white; }
+        .whatsapp-btn { background: #25D366; color: white; margin-top: 15px; }
+        .whatsapp-btn:hover { background: #128C7E; color: white; }
 
-        .trade-item h4 {
-            font-size: 1.2rem;
-            color: white;
-            margin-bottom: 10px;
-        }
+        /* الفوتر */
+        footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 100px; text-align: center; color: var(--text-muted); }
 
-        .trade-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* عرض السعر (Pricing) */
-        .pricing-section {
-            text-align: center;
-            padding: 40px 0 100px;
-        }
-
-        .pricing-card {
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid var(--primary);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: 20px;
-            right: -35px;
-            background: var(--primary);
-            color: var(--bg-color);
-            padding: 5px 40px;
-            transform: rotate(45deg);
-            font-weight: 800;
-            font-size: 0.9rem;
-        }
-
-        .price {
-            font-size: 4rem;
-            font-weight: 900;
-            margin: 20px 0;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .currency {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        .duration {
-            font-size: 1rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .pricing-list {
-            list-style: none;
-            margin: 30px 0;
-            text-align: right;
-        }
-
-        .pricing-list li {
-            margin-bottom: 15px;
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        .pricing-list i {
-            color: var(--primary);
-            margin-left: 10px;
-        }
-
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25D366;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            width: 100%;
-            justify-content: center;
-        }
-
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-        }
-
-        /* الفوتر (Footer) */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-        }
-
-        /* التجاوب مع الشاشات الصغيرة */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .pricing-badge { right: -45px; }
-            .hero-image { width: 100%; border-radius: 16px; margin-bottom: 40px; }
-            .trade-item { text-align: center; }
+            .exchange-section { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* يمكن إضافة قائمة برجر لاحقاً */
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo"><i class="fa-solid fa-cube"></i> TechLLMs</a>
+            <nav class="nav-links">
+                <a href="#services">الخدمات المؤسساتية</a>
+                <a href="#exchange">منصة التداول (OTC)</a>
+                <a href="#security">الأمان والامتثال</a>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
-        <header>
-            <a href="#" class="logo">Host<span>Pro</span></a>
-            <a href="#offer" class="contact-btn">احجز عرضك الآن</a>
-        </header>
-
         <section class="hero">
-            <h1>انطلق بموقعك مع استضافة <br><span class="gradient-text">عالمية السرعة</span></h1>
-            <p>نوفر لكم دومينات .com مع حماية متقدمة، استضافة فائقة السرعة، وأدوات احترافية لبناء صفحات الهبوط بكل سهولة.</p>
-
-            <img src="tech-1.jpg" alt="خدمات استضافة الويب الاحترافية" class="hero-image">
+            <h1>البنية التحتية لـ <span>الاقتصاد الرقمي</span></h1>
+            <p>مؤسسة متكاملة توفر سيولة فورية من العملات المستقرة (USDT)، وحلول تسويات مالية عابرة للحدود مدعومة بتقنيات Web3 والذكاء الاصطناعي لقطاعات التجارة، الشحن، والطاقة.</p>
+            <a href="#exchange" class="action-btn" style="width: auto;">ابدأ التداول الآن</a>
         </section>
 
-        <section class="features">
-            <div class="glass-panel text-center">
-                <i class="fa-solid fa-shield-halved feature-icon"></i>
-                <h3>أمان DNSSEC</h3>
-                <p>حماية متقدمة لنطاقك تضمن عدم توجيه زوارك إلى مواقع احتيالية، أمان تام لبيانات عملائك.</p>
-            </div>
+        <section id="services" style="margin-bottom: 100px;">
+            <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 10px;">حلولنا الاستراتيجية</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">مصممة للارتقاء بأعمالك وتجاوز قيود الأنظمة المصرفية التقليدية</p>
             
-            <div class="glass-panel text-center">
-                <i class="fa-solid fa-rocket feature-icon"></i>
-                <h3>استضافة فائقة السرعة</h3>
-                <p>سيرفرات عالمية تضمن سرعة تحميل استثنائية لموقعك، مما يحسن من تجربة المستخدم ونتائج الـ SEO.</p>
-            </div>
-
-            <div class="glass-panel text-center">
-                <i class="fa-solid fa-layer-group feature-icon"></i>
-                <h3>أدوات متطورة</h3>
-                <p>نوفر لك صفحة هبوط احترافية مجهزة بأحدث الأدوات التقنية للبدء في مشروعك فوراً دون تعقيدات.</p>
-            </div>
-        </section>
-
-        <section class="global-trade">
-            <div class="glass-panel">
-                <h2>لماذا نطاق <span style="color: white;">.Com</span> هو بوابتك للتجارة الدولية؟</h2>
-                <p>في عالم الأعمال العابرة للحدود، يعتبر امتداد .Com المعيار الذهبي للمصداقية والاحترافية. امتلاكك لهذا النطاق يمنحك ميزة تنافسية لا غنى عنها:</p>
-                
-                <div class="trade-grid">
-                    <div class="trade-item">
-                        <i class="fa-solid fa-globe"></i>
-                        <h4>ثقة عالمية مطلقة</h4>
-                        <p>الشركات والعملاء حول العالم يثقون في النطاقات التجارية .com أكثر من أي امتداد محلي آخر، مما يسهل بناء الشراكات والثقة من النظرة الأولى.</p>
-                    </div>
-                    <div class="trade-item">
-                        <i class="fa-solid fa-ship"></i>
-                        <h4>هوية عابرة للحدود</h4>
-                        <p>يُظهر نطاقك أن أعمالك غير مقيدة بحدود جغرافية، وهو أمر حيوي ومهم لقطاعات التجارة الدولية، الاستيراد والتصدير، وخدمات الشحن.</p>
-                    </div>
-                    <div class="trade-item">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <h4>أفضلية في محركات البحث</h4>
-                        <p>تحظى النطاقات العالمية بأولوية في محركات البحث (SEO) عالمياً، مما يضمن وصول موقعك التجاري وخدماتك للأسواق المستهدفة بسرعة وفعالية.</p>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <h3>تسويات B2B الدولية</h3>
+                    <p>القضاء على التأخيرات البنكية في صفقات الاستيراد والتصدير عبر استخدام العقود الذكية وتسويات USDT الفورية بتكلفة شبه معدومة.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-ship"></i>
+                    <h3>دعم قطاعات اللوجستيات</h3>
+                    <p>حلول دفع مرنة وموثوقة لقطاعات الشحن البحري، الطاقة، وتجارة الوقود (Bunkering) لضمان استمرارية سلاسل الإمداد دون انقطاع.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-microchip"></i>
+                    <h3>تحليلات مدعومة بالذكاء الاصطناعي</h3>
+                    <p>دمج أدوات AI لتتبع مؤشرات الأسواق العالمية وحركة السيولة، مما يمنح مؤسستك ميزة تنافسية في اتخاذ القرارات المالية.</p>
                 </div>
             </div>
         </section>
 
-        <section id="offer" class="pricing-section">
-            <div class="glass-panel pricing-card">
-                <div class="pricing-badge">العرض الذهبي</div>
-                <h2 style="color: var(--primary);">الباقة الشاملة</h2>
+        <section id="exchange" class="exchange-section">
+            <div class="glass-panel calculator">
+                <h3 style="margin-bottom: 30px; font-size: 1.8rem; color: white;">بوابة السيولة الفورية (OTC)</h3>
                 
-                <div class="price">
-                    1500 <span class="currency">د.ل</span>
+                <div class="input-group">
+                    <label>المبلغ المدفوع (دينار ليبي)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="fiatAmount" value="1500" oninput="calculateCrypto()">
+                        <div class="currency-badge">LYD</div>
+                    </div>
                 </div>
-                <div class="duration">صلاحية لمدة سنتين (24 شهراً) - تجديد تلقائي</div>
 
-                <ul class="pricing-list">
-                    <li><i class="fa-solid fa-check"></i> نطاق دولي (.com) مجاني</li>
-                    <li><i class="fa-solid fa-check"></i> استضافة عالمية سريعة ومستقرة</li>
-                    <li><i class="fa-solid fa-check"></i> تفعيل بروتوكول حماية DNSSEC</li>
-                    <li><i class="fa-solid fa-check"></i> تصميم صفحة هبوط احترافية</li>
-                    <li><i class="fa-solid fa-check"></i> دعم فني متواصل</li>
-                </ul>
+                <div style="text-align: center; margin: 20px 0; color: var(--text-muted);">
+                    <i class="fa-solid fa-arrow-down-up-lock"></i> سعر الصرف المعتمد: 1 USDT = <span id="exchangeRate">7.15</span> LYD
+                </div>
 
-                <a href="https://wa.me/218917021437?text=مرحباً، أريد الاشتراك في عرض الاستضافة والدومين بسعر 1500 دينار." target="_blank" class="whatsapp-btn">
-                    <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة عبر واتساب
-                </a>
+                <div class="input-group">
+                    <label>المبلغ المستلم (USDT)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="cryptoAmount" readonly>
+                        <div class="currency-badge">USDT <span style="font-size:0.7rem; margin-right:5px; color:#888;">(TRC20)</span></div>
+                    </div>
+                </div>
+
+                <button class="action-btn whatsapp-btn" onclick="sendOrder()">
+                    <i class="fa-brands fa-whatsapp"></i> تأكيد الطلب عبر واتساب
+                </button>
+            </div>
+
+            <div class="glass-panel payment-info" id="security">
+                <h3 style="color: var(--accent); margin-bottom: 15px;"><i class="fa-solid fa-shield-halved"></i> بروتوكول الدفع الآمن</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+                    نعتمد أقصى معايير الأمان باستخدام المحافظ الباردة (Cold Storage). أموالك محفوظة خارج نطاق الإنترنت بالكامل حتى لحظة التسوية.
+                </p>
+                
+                <p style="font-weight: bold; color: white;">يرجى تحويل المبلغ إلى عنوان المؤسسة أدناه حصرياً عبر شبكة (TRON):</p>
+                
+                <img src="12550.jpg" alt="عنوان محفظة TechLLMs TRC20" class="qr-code">
+                
+                <div class="wallet-address">
+                    <span id="walletText">TSvW4XVmvY8cyvZdu3yFcbZyMsMW3dYYu8</span>
+                    <button class="copy-btn" onclick="copyWallet()"><i class="fa-solid fa-copy"></i></button>
+                </div>
+
+                <div style="margin-top: 20px; background: rgba(255,0,0,0.1); border-left: 3px solid #ff4444; padding: 15px; text-align: right; border-radius: 5px;">
+                    <p style="font-size: 0.85rem; color: #ffcccc; margin: 0;"><strong>تنبيه هام (KYC):</strong> لحماية عملائنا ومكافحة الاحتيال، يتطلب إتمام أول عملية إرسال رقم المعاملة (TXID) وإثبات الهوية. المعاملات مثبتة علنياً على البلوكشين لضمان حقك.</p>
+                </div>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 جميع الحقوق محفوظة لشركة techllms.</p>
+            <div style="font-size: 1.5rem; font-weight: 900; color: white; margin-bottom: 15px;">Tech<span style="color: var(--primary);">LLMs</span></div>
+            <p>مؤسسة مالية وتقنية لتمكين الجيل القادم من التجارة العالمية.</p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">&copy; 2026 جميع الحقوق محفوظة لشركة TechLLMs.</p>
         </footer>
     </div>
 
+    <script>
+        // إعدادات المتغيرات
+        const currentRate = 7.15; // السعر الثابت
+        const whatsappNumber = "218917021437"; // رقم هاتف المؤسسة
+
+        // دالة حاسبة التداول
+        function calculateCrypto() {
+            const fiat = document.getElementById('fiatAmount').value;
+            if(fiat > 0) {
+                const crypto = (fiat / currentRate).toFixed(2);
+                document.getElementById('cryptoAmount').value = crypto;
+            } else {
+                document.getElementById('cryptoAmount').value = 0;
+            }
+        }
+
+        // دالة نسخ عنوان المحفظة
+        function copyWallet() {
+            const address = document.getElementById('walletText').innerText;
+            navigator.clipboard.writeText(address).then(() => {
+                alert('تم نسخ عنوان المحفظة بنجاح!');
+            });
+        }
+
+        // دالة إرسال الطلب عبر واتساب
+        function sendOrder() {
+            const fiat = document.getElementById('fiatAmount').value;
+            const crypto = document.getElementById('cryptoAmount').value;
+            
+            if(fiat <= 0) {
+                alert("يرجى إدخال مبلغ صحيح");
+                return;
+            }
+
+            const message = `مرحباً مؤسسة TechLLMs،\nأرغب في فتح طلب تسوية/شراء أصول رقمية:\n- المبلغ المدفوع: ${fiat} دينار\n- القيمة المستلمة: ${crypto} USDT\n\nيرجى تأكيد الطلب لإتمام عملية التحويل.`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+        }
+
+        // تشغيل الحساب التلقائي عند فتح الصفحة
+        window.onload = calculateCrypto;
+    </script>
 </body>
 </html>
